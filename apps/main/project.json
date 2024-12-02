@@ -2,12 +2,12 @@
   "name": "main",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
-  "prefix": "sen-mono",
+  "prefix": "sen",
   "sourceRoot": "apps/main/src",
   "tags": [],
   "targets": {
     "build": {
-      "executor": "@angular-devkit/build-angular:browser",
+      "executor": "@angular-devkit/build-angular:application",
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/main",
@@ -50,10 +50,10 @@
       "executor": "@angular-devkit/build-angular:dev-server",
       "configurations": {
         "production": {
-          "browserTarget": "main:build:production"
+          "buildTarget": "main:build:production"
         },
         "development": {
-          "browserTarget": "main:build:development"
+          "buildTarget": "main:build:development"
         }
       },
       "defaultConfiguration": "development"
@@ -61,7 +61,7 @@
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
-        "browserTarget": "main:build"
+        "buildTarget": "main:build"
       }
     },
     "lint": {
@@ -75,14 +75,7 @@
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "apps/main/jest.config.ts",
-        "passWithNoTests": true
-      },
-      "configurations": {
-        "ci": {
-          "ci": true,
-          "codeCoverage": true
-        }
+        "jestConfig": "apps/main/jest.config.ts"
       }
     },
     "serve-static": {
