@@ -782,10 +782,10 @@ import { CommonModule } from '@angular/common';
               </svg>
               Add UI library
             </summary>
-            <pre><span># Generate UI lib</span>
+            <!-- <pre><span># Generate UI lib</span>
 nx g @nx/angular:lib ui
 <span># Add a component</span>
-nx g @nx/angular:component button --project ui</pre>
+nx g @nx/angular:component button --project ui</pre> -->
           </details>
           <details>
             <summary>
