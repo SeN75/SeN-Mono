@@ -43,7 +43,10 @@
       "!{projectRoot}/src/test-setup.[jt]s",
       "!{projectRoot}/test-setup.[jt]s",
       "!{projectRoot}/.eslintrc.json",
-      "!{projectRoot}/eslint.config.js"
+      "!{projectRoot}/eslint.config.js",
+      "!{projectRoot}/cypress/**/*",
+      "!{projectRoot}/**/*.cy.[jt]s?(x)",
+      "!{projectRoot}/cypress.config.[jt]s"
     ],
     "sharedGlobals": []
   },
@@ -65,5 +68,13 @@
   "nxCloudAccessToken": "NTY5NGFmMDctOWExZC00Yjg3LTlhNzAtZGJhNmI0YjFhMzA5fHJlYWQtd3JpdGU=",
   "useInferencePlugins": false,
   "defaultBase": "master",
-  "useLegacyCache": true
+  "useLegacyCache": true,
+  "plugins": [
+    {
+      "plugin": "@nx/angular/plugin",
+      "options": {
+        "targetNamePrefix": ""
+      }
+    }
+  ]
 }
